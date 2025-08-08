@@ -48,3 +48,31 @@ const listadoCompleto = () => {
 };
 
 listadoCompleto();
+
+const mayores = () => {};
+if (confirm("¿Desea una lista con todas las personas mayores de edad?")) {
+    let personasMayores = `Las personas mayores son:\n`;
+    let contador = 0;
+    for (let i = 0; i < personas.length; i++) {
+        let restoAños = FECHA_ACTUAL[2] - personas[i].año;
+        if (
+            restoAños > 18 ||
+            (restoAños === 18 && FECHA_ACTUAL[1] > personas[i].mes) ||
+            (restoAños === 18 &&
+                FECHA_ACTUAL[1] === personas[i].mes &&
+                FECHA_ACTUAL[0] >= personas[i].dia)
+        ) {
+            personasMayores += `- ${personas[i].nombre}\n`;
+            contador += 1;
+        }
+    }
+    if (contador > 1) {
+        alert(`Son ${contador} personas mayores`);
+        console.log(personasMayores);
+    } else if (contador === 1) {
+        alert(`Es ${contador} persona mayor`);
+        console.log(personasMayores);
+    } else {
+        alert("No hay mayores de edad");
+    }
+}
