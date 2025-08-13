@@ -1,0 +1,1 @@
+En este proyecto, solo utilizando funciones y condicionales, se puede generar una lista de personas, con sus respectivos nombres y fecha de nacimiento, y verificar quienes de ellos son mayores de edad.
